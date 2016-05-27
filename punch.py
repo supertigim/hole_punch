@@ -42,7 +42,7 @@ def main():
 
     target = bytes2addr(data)
     print >>sys.stderr, "connected to %s:%d" % target
-
+    sockfd.sendto( "ok", target )    
     while True:
         rfds,_,_ = select( [0, sockfd], [], [] )
         if 0 in rfds:
