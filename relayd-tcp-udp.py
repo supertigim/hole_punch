@@ -35,7 +35,7 @@ def run():
             else:
                 data = sock_GCS.recv(MAVLINK_LENGTH)
                 if addr_udp is not None and data is not None:
-                    udp.sendto( data, target )
+                    udp.sendto( data, addr_udp )
                 #print "unknown socket:", s
 
 if __name__ == '__main__':
